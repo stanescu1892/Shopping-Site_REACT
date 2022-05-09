@@ -1,20 +1,14 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Link from "link-react";
-import { connect } from "react-redux";
-import { setCurrentUser } from "./redux/user/user.actions";
 import Header from "./components/header/Header";
 import Shop from "./pages/shop/shop";
 import SignInAndSignUp from "./pages/sign-in-and-sign-up/SignInAndSignUp";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import Homepage from "./pages/Homepage/Homepage";
 import { Navigate } from "react-router-dom";
-import { selectCurrentUser } from "./redux/user/user.selectors";
-import { createStructuredSelector } from "reselect";
 
 const App = () => {
-  
   useEffect(() => {
     const unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
