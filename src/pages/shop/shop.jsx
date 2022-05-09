@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SHOP_DATA from "../../utils/uiConstants";
+import { SHOP_DATA } from "../../utils/uiConstants";
 import PreviewCollection from "../../components/preview-collection/PreviewCollection";
 
 function Shop() {
