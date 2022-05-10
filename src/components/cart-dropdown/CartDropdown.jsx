@@ -7,9 +7,13 @@ function CartDropDown() {
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
-        {SHOP_DATA?.map((cartItem) => (
-          <CartItem key={cartItem.id} item={cartItem.items} />
-        ))}
+        {SHOP_DATA.length ? (
+          SHOP_DATA?.map((cartItem) => (
+            <CartItem key={cartItem.id} item={cartItem.items} />
+          ))
+        ) : (
+          <span className="emtpy-message"> Your cart is empty</span>
+        )}
       </div>
 
       <CustomButton> GO TO CHECKOUT </CustomButton>

@@ -1,19 +1,16 @@
-import { useState } from "react";
-import { SHOP_DATA } from "../../utils/uiConstants";
-import PreviewCollection from "../../components/preview-collection/PreviewCollection";
+// import { useState } from "react";
+// import { SHOP_DATA } from "../../utils/uiConstants";
+// import PreviewCollection from "../../components/preview-collection/PreviewCollection";
+import CollectionsOverview from "../../components/CollectionsOverview/CollectionsOverview";
+// import { Route } from "react-router-dom";
 
 function Shop() {
-  const [shopData, SetShopData] = useState({
-    collections: SHOP_DATA,
-  });
-
-  const { collections } = shopData;
+  // console.log(match);
 
   return (
     <div className="shop-page">
-      {collections.map(({ id, ...otherCollectionProps }) => (
-        <PreviewCollection key={id} {...otherCollectionProps} />
-      ))}
+      {/* <Route exact path={`${match.path}`} component={CollectionsOverview} /> */}
+      <CollectionsOverview />
     </div>
   );
 }

@@ -1,18 +1,33 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import CartIcon from "../cart-icon/CartIcon";
 import CartDropDown from "../cart-dropdown/CartDropdown";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
+import { StoreContext } from "../../context/store";
 import "./Header.scss";
 
 function Header({ currentUser, hidden }) {
   const [showCart, setShowCart] = React.useState(false);
 
+  const storedAuth = localStorage.getItem("AUTH");
+  const authObj = storedAuth ? JSON.parse(storedAuth) : undefined;
+
+  const navigate = useNavigate();
+  const context = useContext(StoreContext);
+
   const handleShowCartDropDown = () => {
     setShowCart(!showCart);
+  };
+
+  const handleLogout = () => {
+    auth.signOut();
+    localStorage.removeItem("AUTH");
+    context.dispatch({
+      type: "SET_USER",
+      payload: {},
+    });
+    navigate("/");
   };
 
   return (
@@ -27,8 +42,8 @@ function Header({ currentUser, hidden }) {
         <Link className="option" to="/shop">
           CONTACT
         </Link>
-        {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
+        {authObj?.email ? (
+          <div className="option" onClick={handleLogout}>
             {" "}
             SIGN OUT{" "}
           </div>

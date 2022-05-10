@@ -5,7 +5,7 @@ import "./SignUp.scss";
 import { useState } from "react";
 
 function SignUp() {
-  const [newUser, SetNewUser] = useState({
+  const [newUser, setNewUser] = useState({
     displayName: "",
     email: "",
     password: "",
@@ -29,7 +29,7 @@ function SignUp() {
 
       await createUserProfileDocument(user, { displayName });
 
-      SetNewUser({
+      setNewUser({
         displayName: "",
         email: "",
         password: "",
@@ -42,7 +42,7 @@ function SignUp() {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    SetNewUser({ [name]: value });
+    setNewUser({ [name]: value });
   };
 
   const { displayName, email, password, confirmPassword } = newUser;

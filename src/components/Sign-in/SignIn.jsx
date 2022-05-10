@@ -1,13 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import FormInput from "../Form-Input/FormInput";
 import "./SignIn.scss";
 import CustomButton from "../customButton/CustomButton";
+import { useNavigate } from "react-router-dom";
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+import { StoreContext } from "../../context/store";
 
 function SignIn() {
   // const [SignIn, SetSignIn] = useState({ email: "", password: "" });
   const [password, setPassword] = useState({ password: "" });
   const [email, setEmail] = useState({ email: "" });
+
+  const navigate = useNavigate();
+  const context = useContext(StoreContext);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +24,8 @@ function SignIn() {
     const { password } = password;
 
     try {
-      await auth.signInWithEmailAndPassword(email, password);
+      const authRes = await auth.signInWithEmailAndPassword(email, password);
+      console.log("auth-user-pass", authRes);
       setPassword({ password: "" });
       setEmail({ email: "" });
     } catch (error) {
@@ -36,6 +42,18 @@ function SignIn() {
   const handleChangePassword = (event) => {
     const { value } = event.target;
     setPassword({ password: value });
+  };
+
+  const handleSignInWithGoogle = async () => {
+    const authRes = await signInWithGoogle();
+
+    if (authRes.additionalUserInfo.profile) {
+      context.dispatch({
+        type: "SET_USER",
+        payload: authRes.additionalUserInfo.profile,
+      });
+      navigate("/");
+    }
   };
 
   return (
@@ -62,7 +80,11 @@ function SignIn() {
           required
         />
         <CustomButton type="submit"> Sign In </CustomButton>
-        <CustomButton type="button" onClick={signInWithGoogle} isGoogleSignIn>
+        <CustomButton
+          type="button"
+          onClick={handleSignInWithGoogle}
+          isGoogleSignIn
+        >
           {" "}
           Sign In with Google{" "}
         </CustomButton>
