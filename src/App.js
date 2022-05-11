@@ -9,6 +9,7 @@ import Homepage from "./pages/Homepage/Homepage";
 import CheckoutPage from "./pages/checkout/checkout";
 import ContactPage from "./pages/contact/ContactPage";
 
+
 const App = () => {
   const storedAuth = localStorage.getItem("AUTH");
   const authObj = storedAuth ? JSON.parse(storedAuth) : undefined;
@@ -41,6 +42,7 @@ const App = () => {
           <Route exact path="/signin" element={<SignInAndSignUp />} />
         </Routes>
       </div>
+   
     </Router>
   );
 };

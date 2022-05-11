@@ -7,7 +7,7 @@ class GoogleMap extends Component {
       <div className="map">
         <Map
           google={this.props.google}
-          style={{ width: "70%", height: "70%", }}
+          style={{ width: "70%", height: "70%" }}
           zoom={10}
           intialCenter={{
             lat: 22.159801,

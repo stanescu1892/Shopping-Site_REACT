@@ -14,18 +14,20 @@ export const list = {
     {
       title: "Sneakers",
       imageUrl:
-        "https://sothebys-com.brightspotcdn.com/dims4/default/735fb09/2147483647/strip/true/crop/8640x5760+0+0/resize/684x456!/quality/90/?url=http%3A%2F%2Fsothebys-brightspot.s3.amazonaws.com%2Fdotcom%2F87%2F58%2Fab351dc64d5fb96260c9f678b913%2Fgettyimages-1311628068.jpg",
+        "https://i.pinimg.com/564x/52/46/1e/52461e43f4fe06ba18f2359ddb54a64f.jpg",
       id: 3,
     },
     {
       title: "womens",
-      imageUrl: "https://images.indianexpress.com/2019/10/short-girl-dressing-tips.jpg",
+      imageUrl:
+        "https://images.indianexpress.com/2019/10/short-girl-dressing-tips.jpg",
       size: "large",
       id: 4,
     },
     {
       title: "mens",
-      imageUrl: "https://www.dirty-laundry.gr/Articles/Images/MidBanner4.jpg",
+      imageUrl:
+        "https://i.pinimg.com/564x/2c/c1/d2/2cc1d2c7de471dd13563214712055567.jpg",
       size: "large",
       id: 5,
     },

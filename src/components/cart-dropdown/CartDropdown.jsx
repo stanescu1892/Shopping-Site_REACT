@@ -2,6 +2,7 @@ import CustomButton from "../customButton/CustomButton";
 import "./CartDropDown.scss";
 import CartItem from "../cart-item/CartItem";
 import { SHOP_DATA } from "../../utils/uiConstants";
+import { Link } from "react-router-dom";
 
 function CartDropDown() {
   return (
@@ -16,7 +17,9 @@ function CartDropDown() {
         )}
       </div>
 
-      <CustomButton> GO TO CHECKOUT </CustomButton>
+      <Link to="/checkout">
+        <CustomButton> GO TO CHECKOUT </CustomButton>
+      </Link>
     </div>
   );
 }

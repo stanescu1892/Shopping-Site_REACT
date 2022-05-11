@@ -11,8 +11,8 @@ import "./SocialMediaIcons.css";
 
 export default function SocialFollow() {
   return (
-    <div class="social-container">
-      <h3>Social Follow</h3>
+    <div className="social-container">
+ 
       <a href="https://www.youtube.com" className="youtube social">
         <FontAwesomeIcon icon={faYoutube} size="2x" />
       </a>
