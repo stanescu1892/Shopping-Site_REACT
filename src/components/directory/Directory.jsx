@@ -1,7 +1,7 @@
 // import { useState } from "react";
-import "./Directory.scss";
 import MenuItem from "../menu-item/MenuItem";
 import { list } from "../../utils/uiConstants";
+import "./Directory.scss";
 
 const Directory = () => {
   return (

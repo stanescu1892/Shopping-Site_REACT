@@ -1,7 +1,7 @@
 import "./CheckoutItem.scss";
 
-function CheckoutItem({ cartItem }) {
-  const { name, imageUrl, price, quantity } = cartItem;
+function CheckoutItem({ cartItem, onRemoveClick }) {
+  const { name, imageUrl, price } = cartItem;
 
   return (
     <div className="checkout-item">
@@ -10,12 +10,12 @@ function CheckoutItem({ cartItem }) {
       </div>
       <span className="name">{name}</span>
       <span className="quantity">
-        <div className="arrow"> &#10094; </div>
-        <div className="value"> {quantity} </div>
-        <div className="arrow"> &#10095; </div>
+        {/* <div className="arrow"> &#10094; </div> */}
+        <div className="value"> 1 </div>
+        {/* <div className="arrow"> &#10095; </div> */}
       </span>
-      <span className="price">{price}</span>
-      <div className="remove-button"> &#10005; </div>
+      <span className="price">{price}$ </span>
+      <button className="remove-button" onClick={onRemoveClick}> &#10005; </button>
     </div>
   );
 }

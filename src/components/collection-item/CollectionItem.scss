@@ -5,6 +5,7 @@
   height: 350px;
   align-items: center;
   position: relative;
+  
 
   .image {
     width: 100%;
@@ -12,6 +13,7 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+    
   }
 
   .custom-button {
@@ -23,8 +25,10 @@
   }
 
   &.hover {
+    
     .image {
       opacity: 0.8;
+      
     }
     .custom-button {
       opacity: 0.85;

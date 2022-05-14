@@ -1,10 +1,28 @@
+import { useContext } from "react";
+import { StoreContext } from "../../context/store";
+import CheckoutItem from "../../components/checkout-item/CheckoutItem";
 import "./checkout.scss";
 
-import { SHOP_DATA } from "../../utils/uiConstants";
-
-import CheckoutItem from "../../components/checkout-item/CheckoutItem";
-
 function CheckoutPage() {
+  const store = useContext(StoreContext);
+  const cart = store.state.cart;
+  let total = 0;
+  cart.forEach((e) => {
+    total += e.price;
+  });
+
+  // const processedCart = cart.map((e) => {});
+
+  // console.log(cart);
+
+  const hanldleRemoveItemFromCart = (i) => {
+    const temp = cart.filter((e, index) => index !== i);
+    store.dispatch({
+      type: "SET_CART",
+      payload: temp,
+    });
+  };
+
   return (
     <div className="checkout-page">
       <div className="checkout-header">
@@ -25,12 +43,16 @@ function CheckoutPage() {
         </div>
       </div>
 
-      {SHOP_DATA.map((cartItem) => (
-        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+      {cart.map((cartItem, index) => (
+        <CheckoutItem
+          key={cartItem.id}
+          cartItem={cartItem}
+          onRemoveClick={() => hanldleRemoveItemFromCart(index)}
+        />
       ))}
 
       <div className="total">
-        <span>TOTAL: </span>
+        <span>TOTAL: {total}$</span>
       </div>
     </div>
   );

@@ -1,17 +1,22 @@
+import { useContext } from "react";
 import CustomButton from "../customButton/CustomButton";
-import "./CartDropDown.scss";
 import CartItem from "../cart-item/CartItem";
-import { SHOP_DATA } from "../../utils/uiConstants";
 import { Link } from "react-router-dom";
+import { StoreContext } from "../../context/store";
+// import { uid } from "uid";
+import { useId } from "react";
+
+import "./CartDropDown.scss";
 
 function CartDropDown() {
+  const store = useContext(StoreContext);
+  const cart = store.state.cart;
+  const idR = useId();
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
-        {SHOP_DATA.length ? (
-          SHOP_DATA?.map((cartItem) => (
-            <CartItem key={cartItem.id} item={cartItem.items} />
-          ))
+        {cart.length ? (
+          cart?.map((cartItem, index) => <CartItem key={idR} item={cartItem} />)
         ) : (
           <span className="emtpy-message"> Your cart is empty</span>
         )}

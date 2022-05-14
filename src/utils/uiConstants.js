@@ -8,7 +8,7 @@ export const list = {
     {
       title: "T-SHIRTS",
       imageUrl:
-        "https://files.cdn.printful.com/o/upload/lpg-image-upload/6a/6a7203c9ebd4e8a8c4330149bb18095d",
+        "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_03_T28_3035M_E4_X_EC_0?$PDP_IMAGEGRID_ZOOM_XLG$",
       id: 2,
     },
     {

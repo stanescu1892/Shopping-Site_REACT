@@ -13,4 +13,3 @@ firestore.doc("/users/7fuz5ocnbAKkXp8lPq6S/cartItems/Zsd8hxHN2yiyHFyA0xME");
 firestore.collection("/users/7fuz5ocnbAKkXp8lPq6S/cartItems");
 
 
-// 7.13

@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./components/header/Header";
-import Shop from "./pages/shop/shop";
-import SignInAndSignUp from "./pages/sign-in-and-sign-up/SignInAndSignUp";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 import Homepage from "./pages/Homepage/Homepage";
 import CheckoutPage from "./pages/checkout/checkout";
 import ContactPage from "./pages/contact/ContactPage";
+import SignInAndSignUp from "./pages/sign-in-and-sign-up/SignInAndSignUp";
+import Shop from "./pages/shop/shop";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/header/Header";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
+import "./App.css";
 
 const App = () => {
   const storedAuth = localStorage.getItem("AUTH");
@@ -28,8 +28,6 @@ const App = () => {
     return () => unsubscribeFromAuth();
   }, []);
 
-  console.log(authObj?.email);
-
   return (
     <Router>
       <Header />
@@ -42,7 +40,6 @@ const App = () => {
           <Route exact path="/signin" element={<SignInAndSignUp />} />
         </Routes>
       </div>
-   
     </Router>
   );
 };

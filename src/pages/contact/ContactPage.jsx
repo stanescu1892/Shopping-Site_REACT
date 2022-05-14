@@ -1,12 +1,11 @@
 import SocialMediaIcons from "../../components/SocialMediaIcons/SocialMediaIcons";
-import "./ContactPage.scss";
-
 import GoogleMap from "../../components/GoogleMap/GoogleMap";
+import "./ContactPage.scss";
 
 function ContactPage() {
   return (
-    <div>
-      <span>
+    <div className="contact-page">
+      <span className="text">
         Get in touch Our team in the UK is available between the hours of
         08:00am and 19:00pm GMT/BST, but you may find what you are looking for
         even quicker by checking out our Frequently Asked Questions. If you
@@ -23,8 +22,9 @@ function ContactPage() {
         holidays.
       </span>
 
-      <SocialMediaIcons />
       <GoogleMap />
+      <SocialMediaIcons />
+
     </div>
   );
 }

@@ -1,8 +1,7 @@
-import "./CollectionsOverview.scss";
 import { SHOP_DATA } from "../../utils/uiConstants";
 import { useState } from "react";
-
 import PreviewCollection from "../preview-collection/PreviewCollection";
+import "./CollectionsOverview.scss";
 
 function CollectionsOverview() {
   const [shopData, SetShopData] = useState({

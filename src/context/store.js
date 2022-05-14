@@ -2,7 +2,10 @@ import React from "react";
 
 const StoreContext = React.createContext();
 
-const initState = {};
+const initState = {
+  auth: {},
+  cart: [],
+};
 
 const StoreProvider = (props) => {
   const [state, dispatch] = React.useReducer((state, action) => {
@@ -16,17 +19,6 @@ const StoreProvider = (props) => {
         return state;
     }
   }, initState);
-
-
-
-
-
-
-
-
-
-
-  
 
   return (
     <StoreContext.Provider value={{ state, dispatch }}>

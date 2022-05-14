@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import FormInput from "../Form-Input/FormInput";
-import "./SignIn.scss";
 import CustomButton from "../customButton/CustomButton";
 import { useNavigate } from "react-router-dom";
 import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
 import { StoreContext } from "../../context/store";
+import "./SignIn.scss";
 
 function SignIn() {
   // const [SignIn, SetSignIn] = useState({ email: "", password: "" });

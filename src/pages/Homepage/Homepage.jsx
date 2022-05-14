@@ -1,7 +1,8 @@
 import React from "react";
-import "./Homepage.scss";
 import Directory from "../../components/directory/Directory";
 import SocialFollow from "../../components/SocialMediaIcons/SocialMediaIcons";
+import "./Homepage.scss";
+
 
 function Homepage() {
   return (

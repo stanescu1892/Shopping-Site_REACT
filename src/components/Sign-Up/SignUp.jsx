@@ -1,8 +1,9 @@
 import FormInput from "../Form-Input/FormInput";
 import CustomButton from "../customButton/CustomButton";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
-import "./SignUp.scss";
 import { useState } from "react";
+import "./SignUp.scss";
+
 
 function SignUp() {
   const [newUser, setNewUser] = useState({
